@@ -37,9 +37,8 @@ export default function Home() {
                             height={200}
                             src="/gulyas_laszlo_portre.png"
                             alt="Gulyás László portréja"
-                            isZoomed
                             classNames={{
-                                wrapper: "shadow-xl mx-auto lg:mx-0 shadow-cyan-400/50",
+                                wrapper: "shadow-xl mx-auto lg:mx-0 shadow-neutral-400/50",
                             }}
                             draggable={false}
                         />
@@ -53,9 +52,8 @@ export default function Home() {
                             height={300}
                             src="/gulyas_laszlo_portre.png"
                             alt="Gulyás László portréja"
-                            isZoomed
                             classNames={{
-                                wrapper: "shadow-xl mx-auto lg:mx-0 shadow-cyan-400/50",
+                                wrapper: "shadow-xl mx-auto lg:mx-0 shadow-neutral-400/50",
                             }}
                             draggable={false}
                         />
