@@ -14,15 +14,15 @@ export default function NavbarComponent({activeTab, setActiveTab}) {
             ),
         },
         {
-            title: "tanulmányaim",
-            value: "studies",
-            content: ('')
-        },
-        {
             title: "projektjeim",
             value: "projects",
             content: (''
             ),
+        },
+        {
+            title: "tanulmányaim",
+            value: "studies",
+            content: ('')
         },
         {
             title: "kapcsolat",

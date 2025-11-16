@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Laszlo Gulyas - Portfolio Website
 
-## Getting Started
+A modern, full-page scrolling portfolio website showcasing professional projects, educational background, and contact information.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Full-page scrolling experience** with section navigation
+- **Responsive design** optimized for desktop and mobile devices
+- **Interactive project showcase** with live previews and detailed descriptions
+- **Dynamic content** including educational progress tracking
+- **Smooth animations** using Animate.css
+- **Link previews** for external resources
+
+## Tech Stack
+
+- **Framework:** Next.js 15.x
+- **UI Library:** React
+- **Styling:** TailwindCSS
+- **UI Components:** NextUI (HeroUI)
+- **Full-page Scrolling:** @fullpage/react-fullpage
+- **Icons:** React Icons
+- **Animations:** Animate.css
+- **Language:** JavaScript
+
+## Project Structure
+```
+app/
+├── LandingPage.js       # Main full-page scroll container
+├── home/page.js         # Landing section with introduction
+├── projects/page.js     # Project portfolio showcase
+├── studies/page.js      # Educational background
+├── contact/page.js      # Contact information and social links
+└── components/          # Reusable components
+├── link-preview.js
+└── primitives.js
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Featured Projects
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **GlassArtista & TiffanyStúdió** - Multi-domain, multilingual website for architectural glass art services
+- **Közös Nevező Egyesület** - Full-stack web application for Erasmus+ mobility project management
+- **Club Interflow** - University project featuring interactive event management with React Flow
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contact
 
-## Learn More
+- **LinkedIn:** [linkedin.com/in/laszlo-gulyas](https://www.linkedin.com/in/laszlo-gulyas/)
+- **GitHub:** [github.com/g-laci](https://github.com/g-laci)
+- **Email:** gulyas_laszlo@outlook.com
+- **Facebook:** [facebook.com/glacig](https://www.facebook.com/glacig/)
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is a personal portfolio website. All rights reserved.

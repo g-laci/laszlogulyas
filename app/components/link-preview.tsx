@@ -46,8 +46,8 @@ export const LinkPreview = ({
             colorScheme: "dark",
             "viewport.isMobile": true,
             "viewport.deviceScaleFactor": 1,
-            "viewport.width": width * 3,
-            "viewport.height": height * 3,
+            "viewport.width": width * 10,
+            "viewport.height": height * 10,
         });
         src = `https://api.microlink.io/?${params}`;
     } else {
@@ -101,12 +101,13 @@ export const LinkPreview = ({
                     onMouseMove={handleMouseMove}
                     className={cn("text-black dark:text-white", className)}
                     href={url}
+                    target="_blank"
                 >
                     {children}
                 </HoverCardPrimitive.Trigger>
 
                 <HoverCardPrimitive.Content
-                    className="[transform-origin:var(--radix-hover-card-content-transform-origin)]"
+                    className="[transform-origin:var(--radix-hover-card-content-transform-origin)] z-50"
                     side="top"
                     align="center"
                     sideOffset={10}

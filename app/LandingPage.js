@@ -3,20 +3,19 @@
 import React, {useState, useEffect} from 'react';
 import ReactFullpage from "@fullpage/react-fullpage";
 import Home from "./home/page";
-import {StarsBackground} from "./components/stars-background";
 import Studies from "./studies/page";
 import "./globals.css";
+import Projects from "./projects/page";
+import Contact from "./contact/page";
 
 export default function LandingPage({activeTab, setActiveTab}) {
     const [isLoaded, setIsLoaded] = useState(false);
-
 
     useEffect(() => {
         setIsLoaded(true);
     }, []);
 
     return (
-
         <div className="App">
             {isLoaded && (
                 <ReactFullpage
@@ -25,13 +24,16 @@ export default function LandingPage({activeTab, setActiveTab}) {
                     paddingBottom="40px"
                     loopTop={true}
                     loopBottom={true}
-                    anchors={["home", "studies", "projects", "contact"]}
+                    anchors={["home", "projects", "studies", "contact"]}
                     navigation="true"
                     navigationPosition="left"
                     slidesNavigation={true}
                     slidesNavPosition="bottom"
                     licenseKey="xxxxxxxxxxxxxxxxxxxxxxxxx"
-                    controlArrowsHTML={['<div></div>', '<div class="fp-arrow"><svg xmlns="http://www.w3.org/2000/svg" class="animate__animated animate__heartBeat animate__infinite mt-6" viewBox="0 0 177.55 247.28"> <polygon style="fill: #00ffff" points="54.79 247.28 177.55 124.52 53.03 0 0 53.03 71.48 124.52 1.75 194.25 54.79 247.28"/></svg></div>']}
+                    controlArrowsHTML={[
+                        '<div></div>',
+                        '<div class="fp-arrow"><svg xmlns="http://www.w3.org/2000/svg" class="animate__animated animate__heartBeat animate__infinite mt-6" viewBox="0 0 177.55 247.28"><polygon opacity="0.7" fill="#f0f0f0" points="54.79 247.28 177.55 124.52 53.03 0 0 53.03 71.48 124.52 1.75 194.25 54.79 247.28"/></svg></div>'
+                    ]}
                     onLeave={(origin, destination, direction) => {
                         setActiveTab(destination.anchor);
                     }}
@@ -57,13 +59,9 @@ export default function LandingPage({activeTab, setActiveTab}) {
                     render={() => (
                         <ReactFullpage.Wrapper>
                             <Home/>
+                            <Projects/>
                             <Studies/>
-                            <div className="section">
-                                <div className="slide"><StarsBackground starDensity={0.00006}/><h1>Section 3</h1></div>
-                                <div className="slide"><StarsBackground starDensity={0.00006}/><h1>Slide 3.1</h1></div>
-                                <div className="slide"><StarsBackground starDensity={0.00006}/><h1>Slide 3.2</h1></div>
-                            </div>
-                            <div className="section"><StarsBackground starDensity={0.00005}/><h1>Section 4</h1></div>
+                            <Contact/>
                         </ReactFullpage.Wrapper>
                     )}
                 />

@@ -3,7 +3,6 @@
 import {Chip, Image} from "@nextui-org/react";
 import NextImage from "next/image";
 import React, {useEffect, useState} from "react";
-import {StarsBackground} from "../components/stars-background";
 import {useWindowWidth} from "@react-hook/window-size";
 import {title} from "../components/primitives";
 
@@ -63,7 +62,6 @@ export default function Home() {
                     )}
                 </div>
             </div>
-            <StarsBackground starDensity={0.00065}/>
         </div>
     );
 }

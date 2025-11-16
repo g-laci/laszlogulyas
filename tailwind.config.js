@@ -14,8 +14,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: "#202833",
-        sky: "#00ffff",
+        bg: "#21201e",
+        sky: "#f0f0f0",
         programming: "#cc0000",
         science: "#0066cc",
         math: "#006600",
