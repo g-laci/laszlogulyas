@@ -1,3 +1,5 @@
+'use client'
+
 import {Chip, Image, Link} from "@nextui-org/react";
 import React, {useEffect, useState} from "react";
 import {TbExternalLink} from "react-icons/tb";
