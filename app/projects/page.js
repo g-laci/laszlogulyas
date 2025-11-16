@@ -82,7 +82,7 @@ export default function Projects() {
                 <div className="lg:w-1/2 flex flex-col gap-6 mx-auto px-6">
                     <article className=" flex flex-col gap-4 items-center">
                         <h1 className="text-xl lg:text-2xl self-start">A projektről</h1>
-                        <p className="text-justify font-normal text-medium lg:text-lg">Kettő elavult WordPress alapú
+                        <p className="text-justify font-normal text-sm lg:text-lg">Kettő elavult WordPress alapú
                             weboldal
                             egyesítése egy modern és reszponzív webalkalmazássá. A weboldal célja a Magnólia
                             TiffanyStúdió és a GlassArtista építészeti díszüveg bemutatása, valamint szolgáltatásaik
@@ -167,7 +167,7 @@ export default function Projects() {
                 <div className="lg:w-1/2 flex flex-col gap-6 mx-auto px-6">
                     <article className=" flex flex-col gap-4 items-center">
                         <h1 className="text-xl lg:text-2xl self-start">A projektről</h1>
-                        <p className="text-justify font-normal text-medium lg:text-lg">Erasmus+ mobilitási programokkal
+                        <p className="text-justify font-normal text-sm lg:text-lg">Erasmus+ mobilitási programokkal
                             foglalkozó
                             Közös Nevező Egyesület rendelte a weboldalt, amely az adminisztrációt segíti és a szocális
                             tevékenységüket mutatja be.<br></br>A projektek oldalon listázhatóak azok a projektek,
@@ -240,7 +240,7 @@ export default function Projects() {
                 <div className="lg:w-1/2 flex flex-col gap-6 mx-auto px-6">
                     <article className="flex flex-col gap-4 items-center">
                         <h1 className="text-xl lg:text-2xl self-start">A projektről</h1>
-                        <p className="text-justify font-normal text-medium lg:text-lg">Egyetemi projekt a full stack
+                        <p className="text-justify font-normal text-sm lg:text-lg">Egyetemi projekt a full stack
                             webprogramozás
                             kurzusomra. Első Next.js alapú projektem.<br></br>A weboldal események elhelyezését teszi
                             lehetővé egy naptáron, amely mögött egy React Flow alapon működő interaktív diagram
