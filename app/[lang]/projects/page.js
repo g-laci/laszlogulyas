@@ -5,15 +5,43 @@ import React, {useEffect, useState} from "react";
 import {TbExternalLink} from "react-icons/tb";
 import {FaGithub} from "react-icons/fa";
 import NextImage from "next/image";
-import {LinkPreview} from "../components/link-preview";
+import {LinkPreview} from "../../components/link-preview";
+import {usePathname} from "next/navigation";
 
 export default function Projects() {
+
+    const pathname = usePathname();
+    const isEnglish = pathname?.startsWith('/en');
 
     const [domLoaded, setDomLoaded] = useState(false);
 
     useEffect(() => {
         setDomLoaded(true);
     }, []);
+
+    const t = {
+        generic: {
+            about: isEnglish ? "About the Project" : "A projektről",
+            technologies: isEnglish ? "Technologies and Libraries Used" : "Használt technológiák és könyvtárak",
+        },
+        slide1: {
+            paragraph: isEnglish
+                ? "Merging two outdated WordPress sites into a modern, responsive web application. The site showcases Magnólia Tiffany Studio and GlassArtista architectural stained glass and promotes their services. The project includes a multilingual (Hungarian, German, English) interface, custom contact and quote request forms, and an interactive gallery to showcase artworks. During development it was important that the tiffanystudio.at and tiffanystudio.hu domains point to the correct subpages. Some content is displayed dynamically based on the domain and language locale. The next phase will focus on SEO to increase visitors and potential orders."
+                : "Kettő elavult WordPress alapú weboldal egyesítése egy modern és reszponzív webalkalmazássá. A weboldal célja a Magnólia TiffanyStúdió és a GlassArtista építészeti díszüveg bemutatása, valamint szolgáltatásaik népszerűsítése.\nA projekt tartalmaz egy többnyelvű (magyar, német, angol) felületet, egyedi űrlapokat a kapcsolatfelvételhez és árajánlatkéréshez, valamint egy interaktív galériát a műalkotások bemutatására. A fejlesztéskor fontos szempont volt, hogy a tiffanystudio.at és tiffanystudio.hu domainek a megfelelő aloldalra mutassanak. Az oldalak egyes tartalmai a domain és a nyelvi locale alapján dinamikusan kerülnek megjelenítésre.\nA projekt következő fázisa a keresőoptimalizálás lesz."
+        },
+
+        slide2: {
+            paragraph: isEnglish
+                ? "The site was commissioned by the Közös Nevező Association, which handles Erasmus+ mobility programs. It supports administration and showcases the association's social activities. Projects can be listed for teams sent from Hungary or those organized by the association. A map, calendar and filter view help navigation. Administrators can create, edit and delete projects. News integrates the association's social media activity; new posts from their Instagram and TikTok appear on the site automatically. The project is in active development and additional features will be added together with new content."
+                : "Erasmus+ mobilitási programokkal foglalkozó Közös Nevező Egyesület rendelte a weboldalt, amely az adminisztrációt segíti és a szociális tevékenységüket mutatja be. A projektek oldalon listázhatóak azok a projektek, amelyekre magyar csapatot küldtek, illetve ők rendeztek meg. Ezt egy térkép, naptár és szűrő nézet is segíti. Minden projekt létrehozható, módosítható és törölhető az adminisztrátor jogosultsággal rendelkező felhasználóknak. A hírek oldalon az egyesület szociális média tevékenysége került integrálásra. Minden új poszt az egyesület Instagram és TikTok oldalain azonnal megjelenésre kerül a weboldalon is. A projekt jelenleg is fejlesztés alatt áll."
+        },
+
+        slide3: {
+            paragraph: isEnglish
+                ? "A university full-stack project — my first Next.js based project. The site enables placing events on a calendar backed by an interactive diagram editor built with React Flow. It simulates a dormitory club's workflow: coordinators can assign tasks to each other. An email notification system informs users with the appropriate role about their tasks."
+                : "Egyetemi projekt a full stack webprogramozás kurzusomra. Első Next.js alapú projektem. A weboldal események elhelyezését teszi lehetővé egy naptáron, amely mögött egy React Flow alapon működő interaktív diagram szerkesztő áll. Az implementáció egy kollégiumi klub működését szimulálja. A koordinátorok különböző feladatokat oszthatnak egymásnak. A feladatokhoz e-mail értesítési rendszer is tartozik, amely az adott szereppel rendelkező felhasználókat értesíti feladataikról."
+        },
+    };
 
     return (
         <div className="section" style={{zIndex: 1, overflow: "hidden"}}>
@@ -81,23 +109,11 @@ export default function Projects() {
             <div className="slide">
                 <div className="lg:w-1/2 flex flex-col gap-6 mx-auto px-6">
                     <article className=" flex flex-col gap-4 items-center">
-                        <h1 className="text-xl lg:text-2xl self-start">A projektről</h1>
-                        <p className="text-justify font-normal text-sm lg:text-lg">Kettő elavult WordPress alapú
-                            weboldal
-                            egyesítése egy modern és reszponzív webalkalmazássá. A weboldal célja a Magnólia
-                            TiffanyStúdió és a GlassArtista építészeti díszüveg bemutatása, valamint szolgáltatásaik
-                            népszerűsítése.<br></br>A projekt tartalmaz egy többnyelvű (magyar, német, angol) felületet,
-                            egyedi
-                            űrlapokat a kapcsolatfelvételhez és árajánlatkéréshez, valamint egy interaktív galériát a
-                            műalkotások bemutatására. A fejlesztéskor fontos szempont volt, hogy a tiffanystudio.at és
-                            tiffanystudio.hu domainek a megfelelő aloldalra mutassanak. Az oldalak egyes tartalmai a
-                            domain és a nyelvi locale alapján dinamikusan kerülnek megjelenítésre.<br></br>A projekt
-                            következő fázisa a keresőoptimalizálás lesz, hiszen a látogatók számával növeljük a
-                            potenciális megrendeléseket is.</p>
+                        <h1 className="text-xl lg:text-2xl self-start">{t.generic.about}</h1>
+                        <p className="text-justify font-normal text-sm lg:text-lg">{t.slide1.paragraph}</p>
                     </article>
                     <div className="flex flex-col gap-4">
-                        <h1 className="text-xl lg:text-2xl self-start text-start">Használt technológiák<br></br>és
-                            könyvtárak</h1>
+                        <h1 className="text-xl lg:text-2xl self-start text-start">{t.generic.technologies}</h1>
                         <div className="flex flex-row gap-3 w-fit flex-wrap max-w-screen-lg">
                             <Chip>Next.js</Chip><Chip>React</Chip><Chip>Javascript</Chip><Chip>Vercel</Chip><Chip>Git</Chip><Chip>TailwindCSS</Chip><Chip>HeroUI</Chip><Chip>Motion</Chip><Chip>Nodemailer</Chip>
                         </div>
@@ -166,21 +182,11 @@ export default function Projects() {
             <div className="slide">
                 <div className="lg:w-1/2 flex flex-col gap-6 mx-auto px-6">
                     <article className=" flex flex-col gap-4 items-center">
-                        <h1 className="text-xl lg:text-2xl self-start">A projektről</h1>
-                        <p className="text-justify font-normal text-sm lg:text-lg">Erasmus+ mobilitási programokkal
-                            foglalkozó
-                            Közös Nevező Egyesület rendelte a weboldalt, amely az adminisztrációt segíti és a szocális
-                            tevékenységüket mutatja be.<br></br>A projektek oldalon listázhatóak azok a projektek,
-                            amelyekre magyar csapatot küldtek, illetve ők rendeztek meg. Ezt egy térkép, naptár és szűrő
-                            nézet is segíti. Minden projekt létrehozható, módosítható és törölhető az adminisztrátor
-                            jogosultsággal rendelkező felhasználóknak. A hírek oldalon az egyesület szociális média
-                            tevékenysége került integrálásra. Minden új poszt az egyesület Instagram és TikTok oldalain
-                            azonnal megjelenésre kerül a weboldalon is.<br></br>A projekt jelenleg is fejlesztés alatt
-                            áll, további funkciók kerülnek beépítésre a jövőben az új tartalmakkal együtt.</p>
+                        <h1 className="text-xl lg:text-2xl self-start">{t.generic.about}</h1>
+                        <p className="text-justify font-normal text-sm lg:text-lg">{t.slide2.paragraph}</p>
                     </article>
                     <div className="flex flex-col gap-3">
-                        <h1 className="text-xl lg:text-2xl text-start self-start">Használt technológiák és
-                            könyvtárak</h1>
+                        <h1 className="text-xl lg:text-2xl text-start self-start">{t.generic.technologies}</h1>
                         <div className="hidden lg:flex flex-row gap-2 w-fit flex-wrap">
                             <Chip>Next.js</Chip><Chip>React</Chip><Chip>Javascript</Chip><Chip>Vercel</Chip><Chip>Git</Chip><Chip>TailwindCSS</Chip><Chip>HeroUI</Chip><Chip>Motion</Chip><Chip>Clerk</Chip><Chip>Webhooks</Chip><Chip>Prisma</Chip><Chip>PostgreSQL</Chip><Chip>Syncfusion</Chip><Chip>IFTTT</Chip><Chip>Google
                             Search Console</Chip><Chip>Meta for Developers</Chip><Chip>Microsoft Entra ID</Chip>
@@ -239,18 +245,11 @@ export default function Projects() {
             <div className="slide">
                 <div className="lg:w-1/2 flex flex-col gap-6 mx-auto px-6">
                     <article className="flex flex-col gap-4 items-center">
-                        <h1 className="text-xl lg:text-2xl self-start">A projektről</h1>
-                        <p className="text-justify font-normal text-sm lg:text-lg">Egyetemi projekt a full stack
-                            webprogramozás
-                            kurzusomra. Első Next.js alapú projektem.<br></br>A weboldal események elhelyezését teszi
-                            lehetővé egy naptáron, amely mögött egy React Flow alapon működő interaktív diagram
-                            szerkesztő áll. Az implementáció egy kollégiumi klub működését szimulálja. A koordinátorok
-                            különböző feladatokat oszthatnak egymásnak. A feladatokhoz e-mail értesítési rendszer is
-                            tartozik, amely az adott szereppel rendelkező felhasználókat értesíti feladataikról.</p>
+                        <h1 className="text-xl lg:text-2xl self-start">{t.generic.about}</h1>
+                        <p className="text-justify font-normal text-sm lg:text-lg">{t.slide3.paragraph}</p>
                     </article>
                     <div className="flex flex-col gap-3">
-                        <h1 className="text-xl lg:text-2xl text-start self-start">Használt technológiák és
-                            könyvtárak</h1>
+                        <h1 className="text-xl lg:text-2xl text-start self-start">{t.generic.technologies}</h1>
                         <div className="hidden lg:flex flex-row gap-3 w-fit flex-wrap ">
                             <Chip>Next.js</Chip><Chip>React</Chip><Chip>Javascript</Chip><Chip>Vercel</Chip><Chip>Git</Chip><Chip>TailwindCSS</Chip><Chip>HeroUI</Chip><Chip>Motion</Chip><Chip>React
                             Flow</Chip><Chip>Clerk</Chip><Chip>Resend</Chip><Chip>Prisma</Chip><Chip>PostgreSQL</Chip>

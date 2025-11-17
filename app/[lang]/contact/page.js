@@ -7,7 +7,7 @@ import {Changa} from "next/dist/compiled/@next/font/dist/google";
 import {FaFacebookMessenger, FaGithub, FaGlobe, FaHourglassHalf, FaLinkedin, FaPhoneAlt} from "react-icons/fa";
 import {BsMortarboardFill} from "react-icons/bs";
 import {TbFileCv, TbWorldWww} from "react-icons/tb";
-import {LinkPreview} from "../components/link-preview";
+import {LinkPreview} from "../../components/link-preview";
 import {PiMicrosoftOutlookLogoFill, PiReadCvLogoFill} from "react-icons/pi";
 import {FaLocationDot} from "react-icons/fa6";
 import {MdFileDownload} from "react-icons/md";

@@ -1,46 +1,30 @@
 import {LinkedInIcon, Logo} from "../icons/Icons.js"
-import {MailIcon} from "../icons/Icons.js";
-import {FacebookIcon} from "../icons/Icons.js";
-import {InstagramIcon} from "../icons/Icons.js";
 import {LinkPreview} from "./link-preview";
 import {FaFacebookMessenger, FaGithub, FaLinkedin} from "react-icons/fa";
 import {PiMicrosoftOutlookLogoFill} from "react-icons/pi";
+import {useRouter, usePathname} from "next/navigation";
 
 export default function Social() {
 
-    const words = [
-        "Szia!", // Hungarian
-        "Hi!", // English
-        "Hallo!", // German
-        "Ciao!", // Italian
-        "Hola!", // Spanish
-        "Salut!", // French
-        "Oi!", // Portuguese
-        "Hej!", // Swedish
-        "Hei!", // Norwegian
-        "Hej!", // Danish
-        "Tere!", // Estonian
-        "Sveiki!", // Latvian
-        "Labas!", // Lithuanian
-        "Cześć!", // Polish
-        "Ahoj!", // Czech
-        "Привет!", // Russian
-        "Здраво!", // Serbian
-        "Zdravo!", // Croatian
-        "Pozdrav!", // Bosnian
-        "Merhaba!", // Turkish
-        "Γεια!", // Greek
-        "Hallo!", // Dutch
-        "Hei!", // Finnish
-        "Halló!", // Icelandic
-        "Dia duit!", // Irish
-        "Hai!", // Romanian
-        "Привет!", // Bulgarian
-        "Ahoj!", // Slovak
-        "Zdravo!", // Slovenian
-        "Shalom!", // Hebrew
-        "Salam!", // Arabic
-    ];
+    const router = useRouter();
+    const pathname = usePathname();
+
+    const toggleLanguage = () => {
+        if (!pathname) return;
+
+        if (pathname.startsWith('/en')) {
+            // Switch to Hungarian (default)
+            const newPath = pathname.replace(/^\/en/, '/hu');
+            router.push(newPath);
+        } else if (pathname.startsWith('/hu')) {
+            // Switch to English
+            const newPath = pathname.replace(/^\/hu/, '/en');
+            router.push(newPath);
+        }
+    };
+
+    const currentLang = pathname?.startsWith('/en') ? 'HU' : 'EN';
+
 
     return (
         <>
@@ -58,6 +42,13 @@ export default function Social() {
                 <LinkPreview url="https://www.facebook.com/glacig/">
                     <FaFacebookMessenger  size={25} />
                 </LinkPreview>
+                <button
+                    onClick={toggleLanguage}
+                    aria-label="Toggle language"
+                    className="ml-2 px-2 py-1 rounded bg-gray-800 text-white text-sm hover:bg-gray-700"
+                >
+                    {currentLang}
+                </button>
             </div>
             <div className="flex w-full pr-2 justify-end" style={{zIndex: 2, position: "fixed", bottom: "10px"}}>
                 <Logo/>

@@ -4,7 +4,7 @@ import {Chip, Image} from "@nextui-org/react";
 import NextImage from "next/image";
 import React, {useEffect, useState} from "react";
 import {useWindowWidth} from "@react-hook/window-size";
-import {title} from "../components/primitives";
+import {title} from "../../components/primitives";
 
 export default function Home() {
 
