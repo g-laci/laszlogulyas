@@ -46,7 +46,7 @@ export default function Contact() {
                     <div className="flex flex-row gap-3" >
                         <PiReadCvLogoFill size={25} />
                         <LinkPreview url="/cv_laszlo_gulyas.pdf" isStatic imageSrc="/cv_screenshot.png" className="hover:underline">
-                            Önéletrajzom (.pdf)
+                            CV (.pdf)
                         </LinkPreview>
                     </div>
                     <div className="flex flex-row gap-3 select-all">
@@ -55,7 +55,7 @@ export default function Contact() {
                     </div>
                     <div className="flex flex-row gap-3 select-all">
                         <FaLocationDot size={25} />
-                        1043 Budapest, IV. kerület
+                        Budapest
                     </div>
                 </div>
             </div>

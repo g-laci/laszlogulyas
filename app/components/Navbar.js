@@ -3,32 +3,34 @@
 import React from "react";
 import {Navbar, NavbarContent} from "@nextui-org/react";
 import {Tabs} from "./tabs";
+import {usePathname} from "next/navigation";
 
 export default function NavbarComponent({activeTab, setActiveTab}) {
 
+    const pathname = usePathname();
+    const isEnglish = pathname?.startsWith('/en');
+
+
     const tabs = [
         {
-            title: "home",
+            title: isEnglish ? "home" : "home",
             value: "home",
-            content: (''
-            ),
+            content: (''),
         },
         {
-            title: "projektjeim",
+            title: isEnglish ? "projects" : "projektjeim",
             value: "projects",
-            content: (''
-            ),
+            content: (''),
         },
         {
-            title: "tanulmányaim",
+            title: isEnglish ? "studies" : "tanulmányaim",
             value: "studies",
             content: ('')
         },
         {
-            title: "kapcsolat",
+            title: isEnglish ? "contact" : "kapcsolat",
             value: "contact",
-            content: (''
-            ),
+            content: (''),
         },
     ];
 

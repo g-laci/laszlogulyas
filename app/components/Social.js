@@ -3,6 +3,7 @@ import {LinkPreview} from "./link-preview";
 import {FaFacebookMessenger, FaGithub, FaLinkedin} from "react-icons/fa";
 import {PiMicrosoftOutlookLogoFill} from "react-icons/pi";
 import {useRouter, usePathname} from "next/navigation";
+import {Button, Chip} from "@nextui-org/react";
 
 export default function Social() {
 
@@ -25,7 +26,6 @@ export default function Social() {
 
     const currentLang = pathname?.startsWith('/en') ? 'HU' : 'EN';
 
-
     return (
         <>
             <div className="flex flex-row gap-4 w-full justify-center items-center animate__animated animate__fadeInUp"
@@ -42,13 +42,15 @@ export default function Social() {
                 <LinkPreview url="https://www.facebook.com/glacig/">
                     <FaFacebookMessenger  size={25} />
                 </LinkPreview>
-                <button
+                <Chip
                     onClick={toggleLanguage}
                     aria-label="Toggle language"
-                    className="ml-2 px-2 py-1 rounded bg-gray-800 text-white text-sm hover:bg-gray-700"
+                    size="md"
+                    radius="full"
+                    className="bg-white text-neutral-800 cursor-pointer hover:bg-neutral-300 transition duration-900 font-extrabold"
                 >
                     {currentLang}
-                </button>
+                </Chip>
             </div>
             <div className="flex w-full pr-2 justify-end" style={{zIndex: 2, position: "fixed", bottom: "10px"}}>
                 <Logo/>
