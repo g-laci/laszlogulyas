@@ -2,17 +2,21 @@
 
 import React from "react";
 import '@xyflow/react/dist/style.css';
-import {Chip, Slider} from "@nextui-org/react";
-import {Changa} from "next/dist/compiled/@next/font/dist/google";
-import {FaFacebookMessenger, FaGithub, FaGlobe, FaHourglassHalf, FaLinkedin, FaPhoneAlt} from "react-icons/fa";
-import {BsMortarboardFill} from "react-icons/bs";
-import {TbFileCv, TbWorldWww} from "react-icons/tb";
+import {FaFacebookMessenger, FaGithub, FaLinkedin, FaPhoneAlt} from "react-icons/fa";
 import {LinkPreview} from "../../components/link-preview";
 import {PiMicrosoftOutlookLogoFill, PiReadCvLogoFill} from "react-icons/pi";
 import {FaLocationDot} from "react-icons/fa6";
-import {MdFileDownload} from "react-icons/md";
+import {usePathname} from "next/navigation";
 
 export default function Contact() {
+
+    const pathname = usePathname();
+    const isEnglish = pathname?.startsWith('/en');
+
+    const t = {
+        cv_text: isEnglish ? "CV (.pdf)" : "Önéletrajz (.pdf)",
+        cv_url: isEnglish ? "/cv_laszlo_gulyas_en.pdf" : "/cv_laszlo_gulyas.pdf",
+    }
 
     return (
         <div className="section" style={{zIndex: 1}}>
@@ -45,8 +49,8 @@ export default function Contact() {
                     </div>
                     <div className="flex flex-row gap-3" >
                         <PiReadCvLogoFill size={25} />
-                        <LinkPreview url="/cv_laszlo_gulyas.pdf" isStatic imageSrc="/cv_screenshot.png" className="hover:underline">
-                            CV (.pdf)
+                        <LinkPreview url={t.cv_url} isStatic imageSrc="/cv_screenshot.png" className="hover:underline">
+                            {t.cv_text}
                         </LinkPreview>
                     </div>
                     <div className="flex flex-row gap-3 select-all">
